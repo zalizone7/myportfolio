@@ -1,0 +1,40 @@
+# Netlify Configuration for ADOT Portfolio
+# Static site – no build step needed
+
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Let Netlify handle asset caching automatically to ensure immediate updates on redeploy
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# We comment out manual Cache-Control for assets so Netlify's automatic instant cache invalidation works properly
+# [[headers]]
+#   for = "*.png"
+#   [headers.values]
+#     Cache-Control = "public, max-age=86400"
+# 
+# [[headers]]
+#   for = "*.css"
+#   [headers.values]
+#     Cache-Control = "public, max-age=86400"
+# 
+# [[headers]]
+#   for = "*.js"
+#   [headers.values]
+#     Cache-Control = "public, max-age=86400"
+
+# Commented out wildcard redirect because this is a static website (not a single-page app like React/Vue).
+# Leaving this active redirects requests for missing files to index.html with a 200 OK status,
+# which makes the browser load HTML instead of CSS/images, breaking the layout.
+# [[redirects]]
+#   from = "/*"
+#   to   = "/index.html"
+#   status = 200
+

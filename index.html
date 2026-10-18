@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ali Mahmood (ADOT) – Python Developer, Ethical Hacker & Cyber Security Expert. Official Portfolio." />
+  <title>ADOT | Ali Mahmood – Cyber Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=1.0.1" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- Matrix Rain Canvas -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <!-- Scanline Overlay -->
+  <div class="scanline"></div>
+
+  <!-- Ambient glow blobs -->
+  <div class="ambient-blob blob-1"></div>
+  <div class="ambient-blob blob-2"></div>
+  <div class="ambient-blob blob-3"></div>
+
+  <main class="container" id="main-content">
+
+    <!-- ===== HERO / PROFILE ===== -->
+    <section class="profile-section reveal" id="profile">
+
+      <!-- Status Badge -->
+      <div class="status-badge" id="status-badge">
+        <span class="status-dot"></span>
+        <span class="status-text">Available for Work</span>
+      </div>
+
+      <!-- Animated Ring Frame -->
+      <div class="avatar-wrapper" id="avatar-wrapper">
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="ring ring-3"></div>
+        <div class="avatar-frame">
+          <img src="profile.png" alt="Ali Mahmood – ADOT" class="avatar-img" id="profile-img" />
+        </div>
+        <div class="orbit-dot"></div>
+        <div class="orbit-dot orbit-dot-2"></div>
+      </div>
+
+      <!-- Name with Glitch -->
+      <h1 class="full-name glitch" id="full-name" data-text="Ali Mahmood">Ali Mahmood</h1>
+
+      <!-- Short Tag -->
+      <div class="short-tag" id="short-tag">
+        <span class="bracket">[</span>
+        <span class="tag-text" id="typed-tag"></span>
+        <span class="cursor-blink">_</span>
+        <span class="bracket">]</span>
+      </div>
+
+      <!-- Skills -->
+      <div class="skills-bar" id="skills-bar">
+        <span class="skill-chip">Python</span>
+        <span class="skill-chip">Penetration Testing</span>
+        <span class="skill-chip">Ethical Hacking</span>
+        <span class="skill-chip cyber-chip">⚡ Cyber Boy</span>
+      </div>
+
+    </section>
+
+    <!-- ===== STATS COUNTER ===== -->
+    <section class="stats-section reveal" id="stats" aria-label="Achievements">
+      <div class="stat-card" id="stat-1">
+        <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Projects Built</span>
+      </div>
+      <div class="stat-card" id="stat-2">
+        <span class="stat-number" data-target="5">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">CTF Challenges</span>
+      </div>
+      <div class="stat-card" id="stat-3">
+        <span class="stat-number" data-target="3">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Years Coding</span>
+      </div>
+      <div class="stat-card" id="stat-4">
+        <span class="stat-number" data-target="100">0</span><span class="stat-plus">%</span>
+        <span class="stat-label">Ethical Hacker</span>
+      </div>
+    </section>
+
+    <!-- ===== MOTIVATION TICKER ===== -->
+    <section class="motivation-section reveal" id="motivations" aria-label="Programming Motivations">
+      <div class="ticker-wrapper">
+        <div class="ticker-track" id="ticker-track"></div>
+      </div>
+    </section>
+
+    <!-- ===== WHAT I DO ===== -->
+    <section class="services-section reveal" id="services" aria-label="What I Do">
+      <div class="section-header">
+        <span class="section-tag">// WHAT I DO</span>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card" id="svc-1">
+          <div class="svc-icon-wrap cyan-glow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="svc-title">Python Developer</h3>
+          <p class="svc-desc">Building automation tools, scripts, bots & data-driven solutions with clean, efficient Python code.</p>
+          <div class="svc-line"></div>
+        </div>
+
+        <div class="service-card" id="svc-2">
+          <div class="svc-icon-wrap purple-glow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="svc-title">Penetration Testing</h3>
+          <p class="svc-desc">Identifying vulnerabilities in systems, networks & web apps before the bad guys do. Offensive security with a defensive mindset.</p>
+          <div class="svc-line"></div>
+        </div>
+
+        <div class="service-card" id="svc-3">
+          <div class="svc-icon-wrap green-glow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="svc-title">Ethical Hacking</h3>
+          <p class="svc-desc">Legally breaking into systems to fix security holes. Protecting digital infrastructure with real hacker techniques.</p>
+          <div class="svc-line"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="projects-section reveal" id="projects" aria-label="Projects">
+      <div class="section-header">
+        <span class="section-tag">// PROJECTS</span>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project Card: Medical Website Audit -->
+        <div class="project-card" id="proj-medical">
+          <div class="proj-header">
+            <div class="proj-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <div class="proj-title-group">
+              <h3 class="proj-title">Medical Website Security Audit</h3>
+              <span class="proj-type">Penetration Testing &amp; Vulnerability Research</span>
+            </div>
+            <span class="proj-status-badge">Live Target</span>
+          </div>
+
+          <p class="proj-desc">
+            Performed a full black-box penetration test on a live medical platform. Identified and documented multiple critical and medium-severity vulnerabilities across the web application and server infrastructure.
+          </p>
+
+          <!-- Vulnerability Table -->
+          <div class="vuln-table-wrap">
+            <div class="vuln-table-header">
+              <span>Vulnerability</span>
+              <span>Severity</span>
+              <span>Status</span>
+            </div>
+
+            <div class="vuln-row">
+              <span class="vuln-name">
+                <svg viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#ff0080"/></svg>
+                Reflected XSS on <code>/admin/login</code>
+              </span>
+              <span class="vuln-sev critical">Critical</span>
+              <span class="vuln-status present">● Still Present</span>
+            </div>
+
+            <div class="vuln-row">
+              <span class="vuln-name">
+                <svg viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#ff0080"/></svg>
+                phpAuction Admin Account Injection via <code>?action</code>
+              </span>
+              <span class="vuln-sev critical">Critical</span>
+              <span class="vuln-status present">● Still Present</span>
+            </div>
+
+            <div class="vuln-row">
+              <span class="vuln-name">
+                <svg viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#ffd700"/></svg>
+                Misconfigured CORS Header (Wildcard Origin)
+              </span>
+              <span class="vuln-sev medium">Medium</span>
+              <span class="vuln-status changed">● Changed</span>
+            </div>
+
+            <div class="vuln-row">
+              <span class="vuln-name">
+                <svg viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#ff6b35"/></svg>
+                BREACH Attack (deflate compression enabled)
+              </span>
+              <span class="vuln-sev high">High</span>
+              <span class="vuln-status present">● Still Present</span>
+            </div>
+
+            <div class="vuln-row">
+              <span class="vuln-name">
+                <svg viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#ff6b35"/></svg>
+                SSL Certificate Mismatch (Apache2 / Ubuntu)
+              </span>
+              <span class="vuln-sev high">High</span>
+              <span class="vuln-status present">● Still Present</span>
+            </div>
+          </div>
+
+          <!-- Terminal snippet -->
+          <div class="terminal-snip">
+            <div class="term-bar">
+              <span class="term-dot" style="background:#ff5f56"></span>
+              <span class="term-dot" style="background:#ffbd2e"></span>
+              <span class="term-dot" style="background:#27c93f"></span>
+              <span class="term-title">root@Auto-Install-Ubuntu-Server-24 — bash</span>
+            </div>
+            <pre class="term-body"><span class="t-root">root@server:~#</span> <span class="t-cmd">sudo grep -Ri "portal.medicalwebsite.com" /etc/apache2/sites-enabled/</span>
+<span class="t-out">medical-portal-le-ssl.conf: ServerName portal.medicalwebsite.com</span>
+<span class="t-out">medical-portal-le-ssl.conf: SSLCertificateFile /etc/letsencrypt/live/portal.medicalwebsite.com/fullchain.pem</span>
+<span class="t-out">medical-portal-le-ssl.conf: SSLCertificateKeyFile /etc/letsencrypt/live/portal.medicalwebsite.com/privkey.pem</span>
+<span class="t-root">root@server:~#</span> <span class="t-cursor">█</span></pre>
+          </div>
+
+          <div class="proj-tags">
+            <span class="ptag">XSS</span>
+            <span class="ptag">SQLi</span>
+            <span class="ptag">CORS</span>
+            <span class="ptag">SSL/TLS</span>
+            <span class="ptag">Apache2</span>
+            <span class="ptag">Black-Box Testing</span>
+          </div>
+        </div>
+
+        <!-- ===== Project: VulnAI ===== -->
+        <div class="project-card reveal" id="proj-vulnai">
+          <div class="proj-header">
+            <div class="proj-icon-wrap" style="color: var(--cyan); border-color: rgba(0,245,255,0.25); background: rgba(0,245,255,0.1);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <circle cx="12" cy="11" r="3"/>
+                <path d="M12 2v2"/>
+              </svg>
+            </div>
+            <div class="proj-title-group">
+              <h3 class="proj-title">VulnAI – AI-Powered Vulnerability Scanner</h3>
+              <span class="proj-type">Automated Reconnaissance &amp; Remediation Suggestions</span>
+            </div>
+            <span class="proj-status-badge" style="color: var(--cyan); background: rgba(0,245,255,0.08); border-color: rgba(0,245,255,0.3);">Active Tool</span>
+          </div>
+
+          <p class="proj-desc">
+            An intelligent security scanner that automates web and network scans using industry-standard tools (Nmap &amp; OWASP ZAP), interprets raw findings using AI, and compiles a comprehensive PDF report with code-level fixes.
+          </p>
+
+          <!-- Split layout for screenshot and workflow -->
+          <div class="vulnai-split">
+            <!-- Left: Screenshot -->
+            <div class="vulnai-screenshot-wrap" onclick="openLightbox('vulnai.png')">
+              <img src="vulnai.png" alt="VulnAI Scanner Dashboard Interface" class="vulnai-screenshot">
+              <div class="screenshot-hover-overlay">
+                <span>&gt;&gt; Click to View Dashboard</span>
+              </div>
+            </div>
+
+            <!-- Right: How It Works Flow -->
+            <div class="vulnai-flow">
+              <h4 class="flow-title">// HOW IT WORKS</h4>
+              <div class="flow-steps">
+                <div class="flow-step">
+                  <span class="step-num">01</span>
+                  <div class="step-details">
+                    <span class="step-label">Target Input</span>
+                    <p class="step-text">User enters target (IP/Domain)</p>
+                  </div>
+                </div>
+                <div class="flow-step">
+                  <span class="step-num">02</span>
+                  <div class="step-details">
+                    <span class="step-label">Scan Type Select</span>
+                    <p class="step-text">Nmap, ZAP, Combined, or Web</p>
+                  </div>
+                </div>
+                <div class="flow-step">
+                  <span class="step-num">03</span>
+                  <div class="step-details">
+                    <span class="step-label">Background Execution</span>
+                    <p class="step-text">VulnAI runs selected tools in background</p>
+                  </div>
+                </div>
+                <div class="flow-step">
+                  <span class="step-num">04</span>
+                  <div class="step-details">
+                    <span class="step-label">AI Analysis</span>
+                    <p class="step-text">Results displayed with AI analysis</p>
+                  </div>
+                </div>
+                <div class="flow-step">
+                  <span class="step-num">05</span>
+                  <div class="step-details">
+                    <span class="step-label">PDF Generation</span>
+                    <p class="step-text">Generate PDF report with solutions</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sample Report Terminal Mockup -->
+          <div class="terminal-snip">
+            <div class="term-bar">
+              <span class="term-dot" style="background:#ff5f56"></span>
+              <span class="term-dot" style="background:#ffbd2e"></span>
+              <span class="term-dot" style="background:#27c93f"></span>
+              <span class="term-title">VulnAI Security Report — Sample Output</span>
+            </div>
+            <pre class="term-body" style="white-space: pre-wrap; font-size: 0.72rem; line-height: 1.6; color: #8b949e;"><span class="t-root">🔐 VulnAI Security Assessment Report</span>
+
+<span class="t-cmd">📊 Executive Summary</span>
+- Target: example.com
+- Total Vulnerabilities: 7
+- Security Score: 34/100
+
+<span class="t-cmd">📈 Vulnerability Statistics</span>
+- Critical: 2
+- High: 3
+- Medium: 1
+- Low: 1
+
+<span class="t-cmd">🔍 Vulnerabilities & Solutions</span>
+1. Port 80: HTTP (Apache 2.2.8) — <span style="color:#ff0080; font-weight:bold;">CRITICAL</span>
+   🔧 Solution: Update to latest version, enable HTTPS
+
+2. Port 443: HTTPS (TLS 1.0) — <span style="color:#ff6b35; font-weight:bold;">HIGH</span>
+   🔧 Solution: Disable TLS 1.0, enable TLS 1.3
+
+<span class="t-cmd">🛡️ Security Recommendations</span>
+- Update all software
+- Enable HTTPS with strong TLS
+- Implement security headers</pre>
+          </div>
+
+          <div class="proj-tags">
+            <span class="ptag">Python</span>
+            <span class="ptag">Nmap</span>
+            <span class="ptag">OWASP ZAP</span>
+            <span class="ptag">AI Analysis</span>
+            <span class="ptag">PDF Generation</span>
+            <span class="ptag">Security Automation</span>
+          </div>
+        </div>
+
+        <!-- ===== Coming Soon Project #3 ===== -->
+        <div class="project-card proj-placeholder reveal" id="proj-soon-2">
+          <div class="placeholder-inner">
+            <div class="ph-text">
+              <span class="ph-label">Upcoming Project</span>
+              <span class="ph-desc">More security research & development work — coming soon.</span>
+            </div>
+            <span class="ph-badge ph-badge-soon">Coming Soon</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== CERTIFICATES ===== -->
+    <section class="certificates-section reveal" id="certificates" aria-label="Certificates">
+      <div class="section-header">
+        <span class="section-tag">// CERTIFICATES</span>
+      </div>
+      <div class="certificates-grid">
+
+        <!-- Certificate Card 1 -->
+        <div class="cert-card">
+          <div class="cert-img-wrap" onclick="openLightbox('certificate1.png')">
+            <img src="certificate1.png" alt="AI in Action Job Simulation Certificate" class="cert-img">
+          </div>
+          <div class="cert-content">
+            <h4 class="cert-title">AI in Action Job Simulation</h4>
+            <p class="cert-meta"><span class="cert-issuer">Vista / Forage</span> &bull; <span class="cert-date">July 2026</span></p>
+          </div>
+        </div>
+
+        <!-- Certificate Card 2 -->
+        <div class="cert-card">
+          <div class="cert-img-wrap" onclick="openLightbox('certificate2.png')">
+            <img src="certificate2.png" alt="Cybersecurity Analyst Job Simulation Certificate" class="cert-img">
+          </div>
+          <div class="cert-content">
+            <h4 class="cert-title">Cybersecurity Analyst Job Simulation</h4>
+            <p class="cert-meta"><span class="cert-issuer">TATA / Forage</span> &bull; <span class="cert-date">June 2026</span></p>
+          </div>
+        </div>
+
+        <!-- Certificate Card 3 -->
+        <div class="cert-card">
+          <div class="cert-img-wrap" onclick="openLightbox('certificate3.png')">
+            <img src="certificate3.png" alt="Cybersecurity Job Simulation Certificate" class="cert-img">
+          </div>
+          <div class="cert-content">
+            <h4 class="cert-title">Cybersecurity Job Simulation</h4>
+            <p class="cert-meta"><span class="cert-issuer">Mastercard / Forage</span> &bull; <span class="cert-date">June 2026</span></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== CONTACT FOR WORK ===== -->
+    <section class="contact-section reveal" id="contact" aria-label="Contact for Work">
+      <div class="contact-card">
+        <div class="contact-glow"></div>
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+          </svg>
+        </div>
+        <h3 class="contact-title">Available for Security Work</h3>
+        <p class="contact-desc">Need a penetration test, vulnerability assessment, or Python automation? Let's talk. I work ethically, professionally, and efficiently.</p>
+        <div class="contact-actions">
+          <a href="https://wa.me/923228891186" target="_blank" rel="noopener noreferrer" class="cta-btn cta-primary" id="cta-whatsapp">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat on WhatsApp
+          </a>
+          <a href="mailto:zalizone@gmail.com" class="cta-btn cta-secondary" id="cta-email">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            Send an Email
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TECH STACK ===== -->
+    <section class="tech-section reveal" id="techstack" aria-label="Tech Stack">
+      <div class="section-header">
+        <span class="section-tag">// TECH STACK</span>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-chip" id="tech-python">
+          <svg class="tech-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05L0 11.97l.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05 1.07.13zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09-.33.22zM21.1 6.11l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.31.33-.25.35-.19.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.04zM9.25 12.82l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09-.33.22zm7.5 0l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09-.33.22z"/></svg>
+          <span>Python</span>
+        </div>
+        <div class="tech-chip" id="tech-linux">
+          <svg class="tech-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.93.594.84.259 2.208.13 2.582.91.041.243.139.328.25.468l.19.127a.587.587 0 00.063.051c.023.022.048.048.071.075.217.266.491.394.736.394.18 0 .35-.064.485-.171.135.107.282.171.428.171h.008c.153 0 .295-.064.44-.171.187.107.356.171.493.171.194 0 .363-.078.524-.198a.6.6 0 00.055.045c.098.082.204.143.318.143.05 0 .098-.01.145-.026.047-.012.086-.03.125-.057.065-.047.124-.109.168-.18a.598.598 0 00.066-.26v-.2c.033-.08.066-.19.113-.317.25-.694.22-1.02.02-1.3-.2-.28-.558-.46-.922-.65-.364-.19-.783-.39-.97-.77a.547.547 0 00-.066-.11c.007-.037.01-.076.01-.116.003-.118-.016-.254-.05-.408a3.38 3.38 0 00-.13-.517c-.074-.239-.14-.477-.174-.718-.068-.48-.032-.94.174-1.384a4.12 4.12 0 01.5-.752c.234-.286.482-.554.697-.803.428-.494.77-.96.956-1.473.194-.538.18-1.107.095-1.726-.059-.42-.119-.83-.11-1.235.014-.527.111-1.016.45-1.46.256-.337.586-.58.92-.808.34-.234.675-.46.969-.72.294-.26.565-.55.757-.89.19-.34.298-.72.286-1.133-.006-.212-.037-.43-.093-.65a.454.454 0 00-.029-.07c.044-.098.086-.2.124-.306.177-.48.247-.99.19-1.5-.057-.51-.24-1.018-.547-1.43A2.76 2.76 0 0013.5.247 2.845 2.845 0 0012.504 0z"/></svg>
+          <span>Linux / Kali</span>
+        </div>
+        <div class="tech-chip" id="tech-nmap">
+          <svg class="tech-ico" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/></svg>
+          <span>Nmap</span>
+        </div>
+        <div class="tech-chip" id="tech-metasploit">
+          <svg class="tech-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4.5l6 2.67V11c0 3.77-2.46 7.35-6 8.68-3.54-1.33-6-4.91-6-8.68V8.17L12 5.5z"/></svg>
+          <span>Metasploit</span>
+        </div>
+        <div class="tech-chip" id="tech-git">
+          <svg class="tech-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.608-.406-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>
+          <span>Git</span>
+        </div>
+        <div class="tech-chip" id="tech-wireshark">
+          <svg class="tech-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          <span>Wireshark</span>
+        </div>
+        <div class="tech-chip" id="tech-burp">
+          <svg class="tech-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+          <span>Burp Suite</span>
+        </div>
+        <div class="tech-chip" id="tech-sql">
+          <svg class="tech-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 4.24 2 7v10c0 2.76 4.48 5 10 5s10-2.24 10-5V7c0-2.76-4.48-5-10-5zm0 2c4.42 0 8 1.79 8 3s-3.58 3-8 3-8-1.79-8-3 3.58-3 8-3zM4 9.82C5.6 10.86 8.63 11.5 12 11.5s6.4-.64 8-1.68V12c0 1.21-3.58 3-8 3s-8-1.79-8-3V9.82zM4 14.82C5.6 15.86 8.63 16.5 12 16.5s6.4-.64 8-1.68V17c0 1.21-3.58 3-8 3s-8-1.79-8-3v-2.18z"/></svg>
+          <span>SQL / DB</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SCROLLING MOTIVATIONS ===== -->
+    <section class="motivation-section reveal" id="motivations" aria-label="Programming Motivations">
+      <div class="ticker-wrapper">
+        <div class="ticker-track" id="ticker-track"></div>
+      </div>
+    </section>
+
+    <!-- ===== SOCIAL ===== -->
+    <section class="social-section reveal" id="socials" aria-label="Social Media Accounts">
+
+      <div class="section-header">
+        <span class="section-tag">// FIND ME ON</span>
+      </div>
+
+      <div class="social-grid">
+
+        <a href="https://www.linkedin.com/in/itsalimehmood/" target="_blank" rel="noopener noreferrer" class="social-card" id="social-linkedin" aria-label="LinkedIn">
+          <div class="icon-bg linkedin-bg">
+            <svg class="social-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </div>
+          <div class="social-info">
+            <span class="social-label">LinkedIn</span>
+          </div>
+          <svg class="arrow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+
+        <a href="https://github.com/theAliDot" target="_blank" rel="noopener noreferrer" class="social-card" id="social-github" aria-label="GitHub">
+          <div class="icon-bg github-bg">
+            <svg class="social-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </div>
+          <div class="social-info">
+            <span class="social-label">GitHub</span>
+          </div>
+          <svg class="arrow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+
+        <a href="https://wa.me/923228891186" target="_blank" rel="noopener noreferrer" class="social-card" id="social-whatsapp" aria-label="WhatsApp">
+          <div class="icon-bg whatsapp-bg">
+            <svg class="social-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div class="social-info">
+            <span class="social-label">WhatsApp</span>
+          </div>
+          <svg class="arrow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+
+        <a href="mailto:zalizone@gmail.com" class="social-card" id="social-email" aria-label="Email">
+          <div class="icon-bg email-bg">
+            <svg class="social-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div class="social-info">
+            <span class="social-label">Email</span>
+          </div>
+          <svg class="arrow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+
+        <!-- Fiverr -->
+        <a href="http://www.fiverr.com/s/NNX7g1R" target="_blank" rel="noopener noreferrer" class="social-card" id="social-fiverr" aria-label="Fiverr Profile">
+          <div class="icon-bg fiverr-bg">
+            <svg class="social-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.004 15.588a.995.995 0 1 0 .002-1.99.995.995 0 0 0-.002 1.99zm-.996-3.705h-.85c-.546 0-.84.41-.84 1.092v2.466h-1.61v-3.558h-.684c-.547 0-.84.41-.84 1.092v2.466h-1.61v-4.874h1.61v.74c.264-.574.626-.74 1.163-.74h1.972v.74c.264-.574.625-.74 1.162-.74h.527v1.316zm-6.786 1.501h-3.359c.088.546.43.858 1.006.858.43 0 .732-.175.83-.487l1.425.4c-.351.848-1.22 1.364-2.255 1.364-1.748 0-2.549-1.355-2.549-2.515 0-1.14.703-2.505 2.45-2.505 1.856 0 2.471 1.384 2.471 2.408 0 .224-.01.37-.02.477zm-1.562-.945c-.04-.42-.342-.81-.889-.81-.508 0-.81.225-.908.81h1.797zM7.508 15.44h1.416l1.767-4.874h-1.62l-.86 2.837-.878-2.837H5.72l1.787 4.874zm-6.6 0H2.51v-3.558h1.524v3.558h1.591v-4.874H2.51v-.302c0-.332.235-.536.606-.536h.918V8.412H2.85c-1.162 0-1.943.712-1.943 1.755v.4H0v1.316h.908v3.558z"/></svg>
+          </div>
+          <div class="social-info">
+            <span class="social-label">Fiverr</span>
+          </div>
+          <svg class="arrow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+
+        <!-- Instagram Coming Soon -->
+        <div class="social-card coming-soon-card" id="social-instagram" aria-label="Instagram Coming Soon">
+          <span class="coming-badge">Coming Soon</span>
+          <div class="icon-bg instagram-bg">
+            <svg class="social-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </div>
+          <div class="social-info">
+            <span class="social-label">Instagram</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer reveal" id="footer">
+    <div class="footer-line"></div>
+    <div class="footer-inner">
+      <p class="made-by" id="made-by">Made By <span class="accent">ADOT</span></p>
+      <p class="rights" id="rights">All Rights Reserved © ADOT <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for Certificates -->
+  <div class="lightbox-modal" id="lightbox-modal" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img src="" alt="Certificate View" class="lightbox-content" id="lightbox-content" onclick="event.stopPropagation()">
+  </div>
+
+  <script src="app.js?v=1.0.1"></script>
+  <!-- ===== CHATBOT CONTAINER ===== -->
+  <div class="chatbot-container" id="chatbot-container">
+    <!-- Pulsing floating trigger button -->
+    <button class="chatbot-toggle" id="chatbot-toggle" aria-label="Open Chatbot">
+      <div class="toggle-pulse"></div>
+      <svg class="toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+      <span class="toggle-text">&gt;_ AdotCyber</span>
+    </button>
+
+    <!-- Chat Box Window -->
+    <div class="chat-window" id="chat-window">
+      <div class="chat-header">
+        <div class="header-title">
+          <span class="pulse-dot"></span>
+          <span class="title-text">ADOTCYBER_ASSISTANT_V1.0</span>
+        </div>
+        <button class="chat-close" id="chat-close" aria-label="Close Chat">&times;</button>
+      </div>
+
+      <div class="chat-messages" id="chat-messages"></div>
+
+      <!-- Quick suggestions list -->
+      <div class="chat-suggestions">
+        <button class="suggestion-chip" data-msg="Who is Ali Mahmood?">Who is Ali?</button>
+        <button class="suggestion-chip" data-msg="What are his cybersecurity skills?">Skills</button>
+        <button class="suggestion-chip" data-msg="Show me his featured projects.">Projects</button>
+        <button class="suggestion-chip" data-msg="Do you have his Fiverr profile?">Fiverr Profile</button>
+      </div>
+
+      <form class="chat-input-form" id="chat-input-form">
+        <span class="input-prompt">visitor@adotcyber:~$</span>
+        <input type="text" class="chat-input" id="chat-input" placeholder="Enter query..." autocomplete="off" required>
+        <button type="submit" class="chat-send-btn" id="chat-send-btn">SEND</button>
+      </form>
+    </div>
+  </div>
+  <script src="chatbot.js?v=1.0.1"></script>
+</body>
+</html>
