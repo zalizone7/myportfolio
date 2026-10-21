@@ -50,7 +50,7 @@ Ali Mahmood's profile details:
 - Role: Python Developer, Penetration Tester, Ethical Hacker.
 - Experience: 3+ years coding, 100% Ethical Hacker.
 - Achievements: Built 15+ projects (including VulnAI, Medical website audit), completed 5+ CTF challenges.
-- Contact: Email (zalizone@gmail.com).
+- Contact: Email (zalizone@gmail.com), WhatsApp (+92 309 7413187 / 03097413187).
 - Fiverr Profile: http://www.fiverr.com/s/NNX7g1R
 - LinkedIn, GitHub, WhatsApp details are linked on the social section of the page.
 
