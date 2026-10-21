@@ -293,7 +293,13 @@ document.addEventListener('keydown', e => {
 
     tabs.forEach(tab => {
       if (tab.getAttribute('data-section') === currentId) {
-        tab.classList.add('active');
+        if (!tab.classList.contains('active')) {
+          tab.classList.add('active');
+          // Auto scroll active tab into center view on mobile
+          if (window.innerWidth <= 768) {
+            tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          }
+        }
       } else {
         tab.classList.remove('active');
       }

@@ -1418,17 +1418,33 @@ section {
   .pathora-stats-bar { grid-template-columns: repeat(2, 1fr); }
   .pathora-features-grid { grid-template-columns: 1fr; }
 }
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+  .cyber-navbar {
+    top: 8px;
+    width: calc(100% - 16px);
+  }
   .nav-logo {
     display: none;
   }
   .nav-container {
-    justify-content: center;
     padding: 4px 6px;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+  .nav-tabs {
+    width: 100%;
+    gap: 4px;
+    padding: 2px 4px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
   }
   .nav-tab {
-    padding: 4px 8px;
-    font-size: 0.64rem;
+    padding: 5px 9px;
+    font-size: 0.66rem;
+    letter-spacing: 0.03em;
+  }
+  .nav-tab .tab-slash {
+    display: none; /* Hide // slashes on mobile to save horizontal space */
   }
 }
 @media (max-width: 400px) {
