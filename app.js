@@ -287,3 +287,57 @@ document.addEventListener('keydown', e => {
     window.closeLightbox();
   }
 });
+
+/* ============================================================
+   10. NAVBAR ACTIVE TAB & SCROLL SPY
+   ============================================================ */
+(function initNavTabs() {
+  const tabs = document.querySelectorAll('.nav-tab');
+  const sections = Array.from(tabs).map(tab => {
+    const id = tab.getAttribute('data-section');
+    return document.getElementById(id);
+  }).filter(Boolean);
+
+  function updateActiveTab() {
+    const scrollPos = window.scrollY + 130;
+    let currentId = '';
+
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const section = sections[i];
+      if (section && section.offsetTop <= scrollPos) {
+        currentId = section.id;
+        break;
+      }
+    }
+
+    if (!currentId && sections[0]) {
+      currentId = sections[0].id;
+    }
+
+    tabs.forEach(tab => {
+      if (tab.getAttribute('data-section') === currentId) {
+        tab.classList.add('active');
+      } else {
+        tab.classList.remove('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveTab, { passive: true });
+  updateActiveTab();
+
+  // Smooth scroll and immediate active highlight on click
+  tabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      const targetId = tab.getAttribute('data-section');
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+})();
+
