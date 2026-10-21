@@ -962,7 +962,7 @@ section {
 #social-whatsapp:hover { border-color: rgba(37,211,102,0.4);  box-shadow: 0 8px 32px rgba(37,211,102,0.2);  background: rgba(37,211,102,0.07); }
 #social-email:hover    { border-color: rgba(231,76,60,0.4);   box-shadow: 0 8px 32px rgba(231,76,60,0.2);   background: rgba(231,76,60,0.07); }
 #social-fiverr:hover   { border-color: rgba(29,191,115,0.45); box-shadow: 0 8px 32px rgba(29,191,115,0.25); background: rgba(29,191,115,0.08); }
-#social-instagram.coming-soon-card:hover { transform: translateX(3px); }
+#social-instagram:hover { border-color: rgba(225,48,108,0.45); box-shadow: 0 8px 32px rgba(131,58,180,0.25); background: rgba(225,48,108,0.08); }
 
 .social-info { display: flex; flex-direction: column; gap: 2px; flex: 1; }
 .social-label {
@@ -1037,12 +1037,12 @@ section {
 .certificates-section { width: 100%; }
 .certificates-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  gap: 16px;
   width: 100%;
 }
 .cert-card {
-  border-radius: var(--radius-card);
+  border-radius: 16px;
   background: var(--bg-card);
   border: 1px solid rgba(255,255,255,0.07);
   backdrop-filter: blur(16px);
@@ -1058,13 +1058,13 @@ section {
   background: linear-gradient(90deg, var(--cyan), var(--purple));
 }
 .cert-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   border-color: rgba(0,245,255,0.3);
-  box-shadow: 0 16px 48px rgba(0,245,255,0.15);
+  box-shadow: 0 12px 36px rgba(0,245,255,0.15);
 }
 .cert-img-wrap {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/11;
   overflow: hidden;
   border-bottom: 1px solid rgba(255,255,255,0.06);
   background: #000;
@@ -1076,31 +1076,31 @@ section {
   height: 100%;
   object-fit: cover;
   transition: transform 0.45s ease, filter 0.45s ease;
-  filter: brightness(0.85) contrast(1.05);
+  filter: brightness(0.88) contrast(1.05);
 }
 .cert-card:hover .cert-img {
   transform: scale(1.05);
   filter: brightness(1.05) contrast(1.05);
 }
 .cert-content {
-  padding: 16px 20px 20px;
+  padding: 12px 14px 14px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 .cert-title {
   font-family: var(--font-hud);
-  font-size: 0.88rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--text);
-  letter-spacing: 0.04em;
-  line-height: 1.4;
+  letter-spacing: 0.03em;
+  line-height: 1.35;
 }
 .cert-meta {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.64rem;
   color: var(--muted-lt);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
 }
 .cert-issuer {
   color: var(--cyan);
@@ -1291,7 +1291,7 @@ section {
   .stats-section { grid-template-columns: repeat(2,1fr); }
   .services-grid { grid-template-columns: 1fr; }
   .social-grid   { grid-template-columns: 1fr; }
-  .certificates-grid { grid-template-columns: 1fr; }
+  .certificates-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 }
 @media (max-width: 480px) {
   .nav-logo {
@@ -1308,6 +1308,7 @@ section {
 }
 @media (max-width: 400px) {
   .stats-section { grid-template-columns: repeat(2,1fr); }
+  .certificates-grid { grid-template-columns: 1fr; }
 }
 
 /* ==========================================
