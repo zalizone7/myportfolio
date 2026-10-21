@@ -44,6 +44,9 @@ Featured Projects:
 2. Medical Website Security Audit:
    - What it does: Performed a full black-box penetration test on a live medical platform. Identified and documented multiple critical and medium-severity vulnerabilities across the web application and server infrastructure.
    - Findings: Port 80 HTTP (Apache 2.2.8) was CRITICAL (update and enable HTTPS); Port 443 HTTPS (TLS 1.0) was HIGH (disable TLS 1.0, enable TLS 1.3).
+3. Pathora (https://pathoras.vercel.app) – Entry-Test Prep & Career Navigation Ecosystem:
+   - What it does: A 100% free educational portal for Pakistani students with 14 integrated tools including AI mock tests (NUST NET, FAST-NU, UET ECAT, LAT, NAT), merit calculator, 188 universities directory, university & fee comparison, 34 scholarships, career assessment engine with 13 roadmaps, 90 degree guides, entry test calendar, AI presentation maker (.PPTX), IELTS prep pack, CGPA planner, and 13,000+ MCQs with notes.
+   - Tech stack: Full-Stack Web Application, Next.js, React, Vercel, AI Generation, EdTech.
 
 Core Skills:
 - Programming: Python, JavaScript, C++, Bash, Linux.
