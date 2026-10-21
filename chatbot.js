@@ -76,7 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
         history.push({ role: 'user', text: messageText });
         history.push({ role: 'bot', text: data.text });
       } else {
-        appendMessage('bot', 'System Alert: Secure channel failure. Could not parse response from central terminal.');
+        const errorMsg = data && data.error ? data.error : 'Could not parse response from central terminal.';
+        appendMessage('bot', `System Alert: Secure channel failure. [${errorMsg}]`);
       }
     } catch (err) {
       removeTypingIndicator(typingIndicator);

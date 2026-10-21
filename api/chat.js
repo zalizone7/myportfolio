@@ -64,7 +64,7 @@ Tone & Behavior Guidelines:
     });
 
     const API_KEY = process.env.GEMINI_API_KEY || 'AQ.Ab8RN6LQY2CvwDMA_LXiG4WL3_nKdIeI9VCn6k51eefHfk3I3g';
-    const MODEL = 'gemini-2.5-flash';
+    const MODEL = 'gemini-1.5-flash';
     const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`;
 
     const text = await new Promise((resolve, reject) => {
@@ -81,6 +81,8 @@ Tone & Behavior Guidelines:
             const geminiParsed = JSON.parse(geminiData);
             if (geminiParsed.candidates && geminiParsed.candidates[0] && geminiParsed.candidates[0].content) {
               resolve(geminiParsed.candidates[0].content.parts[0].text);
+            } else if (geminiParsed.error) {
+              reject(new Error(geminiParsed.error.message || 'Gemini API Error'));
             } else {
               reject(new Error('Failed to retrieve text from Gemini response'));
             }
