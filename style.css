@@ -5,7 +5,7 @@
 /* ---------- Variables ---------- */
 :root {
   --bg:          #030507;
-  --bg-card:     rgba(12,16,28,0.75);
+  --bg-card:     #080c19;
   --cyan:        #00f5ff;
   --purple:      #bf00ff;
   --green:       #00ff88;
@@ -69,46 +69,36 @@ body {
   position: relative;
 }
 
-/* ---------- Ambient Blobs ---------- */
+/* ---------- Ambient Blobs (GPU Optimized - Static without continuous repaint) ---------- */
 .ambient-blob {
   position: fixed;
   border-radius: 50%;
-  filter: blur(100px);
+  filter: blur(80px);
   pointer-events: none;
   z-index: 0;
-  opacity: 0.12;
-  animation: blobFloat 12s ease-in-out infinite alternate;
-  will-change: transform;
+  opacity: 0.1;
+  transform: translateZ(0);
 }
-.blob-1 { width: 500px; height: 500px; background: var(--purple); top: -120px; left: -150px; animation-delay: 0s; }
-.blob-2 { width: 400px; height: 400px; background: var(--cyan);   bottom: 20%; right: -100px; animation-delay: 4s; }
-.blob-3 { width: 350px; height: 350px; background: var(--green);  bottom: -100px; left: 30%; animation-delay: 8s; }
-
-@keyframes blobFloat {
-  from { transform: translate(0,0) scale(1); }
-  to   { transform: translate(30px,20px) scale(1.08); }
-}
+.blob-1 { width: 450px; height: 450px; background: var(--purple); top: -100px; left: -100px; }
+.blob-2 { width: 380px; height: 380px; background: var(--cyan);   bottom: 20%; right: -80px; }
+.blob-3 { width: 320px; height: 320px; background: var(--green);  bottom: -80px; left: 30%; }
 
 /* ---------- Matrix Canvas ---------- */
 #matrix-canvas {
   position: fixed; inset: 0;
-  z-index: 0; pointer-events: none; opacity: 0.15;
+  z-index: 0; pointer-events: none; opacity: 0.12;
 }
 
-/* ---------- Scanline ---------- */
+/* ---------- Scanline (GPU Optimized - Static texture without full viewport repaints) ---------- */
 .scanline {
   position: fixed; inset: 0;
   z-index: 1; pointer-events: none;
   background: repeating-linear-gradient(
     to bottom,
     transparent 0px, transparent 2px,
-    rgba(0,245,255,0.025) 2px, rgba(0,245,255,0.025) 4px
+    rgba(0,245,255,0.012) 2px, rgba(0,245,255,0.012) 4px
   );
-  animation: scanMove 10s linear infinite;
-}
-@keyframes scanMove {
-  from { background-position: 0 0; }
-  to   { background-position: 0 200px; }
+  transform: translateZ(0);
 }
 
 /* ---------- Scroll Reveal ---------- */
@@ -563,7 +553,6 @@ section {
   border-radius: var(--radius-card);
   background: var(--bg-card);
   border: 1px solid rgba(255,255,255,0.06);
-  backdrop-filter: blur(14px);
   display: flex; flex-direction: column; gap: 12px;
   position: relative; overflow: hidden;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -619,7 +608,6 @@ section {
   border-radius: var(--radius-card);
   background: var(--bg-card);
   border: 1px solid rgba(255,255,255,0.07);
-  backdrop-filter: blur(16px);
   display: flex; flex-direction: column; gap: 20px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   position: relative; overflow: hidden;
@@ -780,7 +768,6 @@ section {
   border-radius: var(--radius-card);
   background: var(--bg-card);
   border: 1px solid rgba(0,245,255,0.15);
-  backdrop-filter: blur(20px);
   display: flex; flex-direction: column;
   align-items: center; text-align: center; gap: 16px;
   box-shadow: 0 0 60px rgba(0,245,255,0.05), 0 0 120px rgba(191,0,255,0.04);
@@ -858,7 +845,6 @@ section {
   padding: 8px 18px; border-radius: 30px;
   background: var(--bg-card);
   border: 1px solid rgba(255,255,255,0.06);
-  backdrop-filter: blur(10px);
   font-family: var(--font-mono);
   font-size: 0.72rem; letter-spacing: 0.06em; color: var(--muted-lt);
   transition: all 0.3s ease; cursor: default;
@@ -927,7 +913,6 @@ section {
   border-radius: var(--radius-card);
   background: var(--bg-card);
   border: 1px solid rgba(255,255,255,0.06);
-  backdrop-filter: blur(16px);
   position: relative; overflow: hidden;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   cursor: pointer;
@@ -1045,7 +1030,6 @@ section {
   border-radius: 16px;
   background: var(--bg-card);
   border: 1px solid rgba(255,255,255,0.07);
-  backdrop-filter: blur(16px);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1754,5 +1738,16 @@ section {
   .chat-window {
     width: calc(100vw - 40px);
     height: 480px;
+  }
+}
+
+/* Touch & Mobile Performance: Restore native cursor and hide custom elements */
+@media (hover: none) or (pointer: coarse) {
+  body {
+    cursor: auto !important;
+  }
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
   }
 }

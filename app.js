@@ -12,65 +12,78 @@ const dot  = document.getElementById('cursor-dot');
 const ring = document.getElementById('cursor-ring');
 let mx = 0, my = 0, rx = 0, ry = 0;
 
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  dot.style.left  = mx + 'px';
-  dot.style.top   = my + 'px';
-});
+// Check if touch device
+const isTouchDevice = window.matchMedia('(hover: none) or (pointer: coarse)').matches;
 
-// Smooth ring follow
-(function animateRing() {
-  rx += (mx - rx) * 0.12;
-  ry += (my - ry) * 0.12;
-  ring.style.left = rx + 'px';
-  ring.style.top  = ry + 'px';
-  requestAnimationFrame(animateRing);
-})();
+if (!isTouchDevice) {
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    dot.style.left  = mx + 'px';
+    dot.style.top   = my + 'px';
+  }, { passive: true });
 
-// Expand ring on hover over interactive elements
-document.querySelectorAll('a, .stat-card, .service-card, .tech-chip, .social-card, .skill-chip, .cert-img-wrap, .lightbox-close, .vulnai-screenshot-wrap').forEach(el => {
-  el.addEventListener('mouseenter', () => ring.classList.add('hovering'));
-  el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
-});
+  // Smooth ring follow
+  (function animateRing() {
+    rx += (mx - rx) * 0.15;
+    ry += (my - ry) * 0.15;
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+    requestAnimationFrame(animateRing);
+  })();
+
+  // Expand ring on hover over interactive elements
+  document.querySelectorAll('a, button, .stat-card, .service-card, .tech-chip, .social-card, .skill-chip, .cert-img-wrap, .lightbox-close, .vulnai-screenshot-wrap, .pathora-feat-item').forEach(el => {
+    el.addEventListener('mouseenter', () => ring.classList.add('hovering'), { passive: true });
+    el.addEventListener('mouseleave', () => ring.classList.remove('hovering'), { passive: true });
+  });
+}
 
 /* ============================================================
-   2. MATRIX RAIN
+   2. MATRIX RAIN (PERFORMANCE OPTIMIZED)
    ============================================================ */
 (function initMatrix() {
   const canvas = document.getElementById('matrix-canvas');
-  const ctx    = canvas.getContext('2d');
-  const CHARS  = '01アイウエオカキクケコサシスセソタチツテトナニヌネノABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&<>{}[]';
-  const FS     = 14;
-  let cols, drops;
+  if (!canvas) return;
+  const ctx    = canvas.getContext('2d', { alpha: false });
+  const CHARS  = '01アイウエオカキクケコサシスセソタチツテトナニヌネノABCDEF0123456789';
+  const FS     = 20; // larger grid = 50% fewer calculations
+  let cols, drops, animId;
+  let lastDraw = 0;
+  const FPS_INTERVAL = 1000 / 25; // smooth 25 FPS throttle to save GPU
 
   function resize() {
-    canvas.width  = window.innerWidth;
+    canvas.width  = Math.min(window.innerWidth, 1920);
     canvas.height = window.innerHeight;
     cols  = Math.floor(canvas.width / FS);
     drops = Array(cols).fill(1);
   }
 
-  function draw() {
-    ctx.fillStyle = 'rgba(3,5,7,0.06)';
+  function loop(now) {
+    animId = requestAnimationFrame(loop);
+    if (document.hidden) return; // pause completely when user switches tabs
+    if (now - lastDraw < FPS_INTERVAL) return;
+    lastDraw = now;
+
+    ctx.fillStyle = 'rgba(3,5,7,0.08)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.font = `${FS}px "Share Tech Mono", monospace`;
 
-    drops.forEach((y, i) => {
+    for (let i = 0; i < cols; i++) {
+      const y = drops[i];
       const ch = CHARS[Math.floor(Math.random() * CHARS.length)];
-      if (Math.random() > 0.88) {
-        ctx.fillStyle = '#00f7ffbd';
-      } else {
-        ctx.fillStyle = `rgba(0,255,136,${0.35 + Math.random() * 0.45})`;
-      }
+      ctx.fillStyle = Math.random() > 0.9 ? '#00f7ff' : 'rgba(0,255,136,0.4)';
       ctx.fillText(ch, i * FS, y * FS);
-      if (y * FS > canvas.height && Math.random() > 0.975) drops[i] = 0;
+
+      if (y * FS > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
       drops[i]++;
-    });
+    }
   }
 
   resize();
-  window.addEventListener('resize', resize);
-  setInterval(draw, 50);
+  window.addEventListener('resize', resize, { passive: true });
+  animId = requestAnimationFrame(loop);
 })();
 
 /* ============================================================
@@ -227,43 +240,7 @@ document.querySelectorAll('a, .stat-card, .service-card, .tech-chip, .social-car
 })();
 
 /* ============================================================
-   8. PARTICLE CURSOR TRAIL
-   ============================================================ */
-(function particleTrail() {
-  const colors = ['#00f5ff','#bf00ff','#00ff88','#ff0080','#ffd700'];
-  function spawn(x, y) {
-    const p = document.createElement('div');
-    const c = colors[Math.floor(Math.random() * colors.length)];
-    const sz = 3 + Math.random() * 4;
-    Object.assign(p.style, {
-      position: 'fixed', left: x+'px', top: y+'px',
-      width: sz+'px', height: sz+'px',
-      borderRadius: '50%', background: c,
-      boxShadow: `0 0 ${sz*2}px ${c}`,
-      pointerEvents: 'none', zIndex: 9997,
-      transform: 'translate(-50%,-50%)',
-      transition: 'opacity 0.5s ease, transform 0.5s ease',
-      opacity: '0.85',
-    });
-    document.body.appendChild(p);
-    requestAnimationFrame(() => {
-      p.style.opacity = '0';
-      p.style.transform = `translate(-50%,-50%) scale(0.2) translateY(-${10+Math.random()*20}px)`;
-    });
-    setTimeout(() => p.remove(), 500);
-  }
-
-  let last = 0;
-  document.addEventListener('mousemove', e => {
-    const now = Date.now();
-    if (now - last < 40) return;
-    last = now;
-    spawn(e.clientX, e.clientY);
-  });
-})();
-
-/* ============================================================
-   9. CERTIFICATES LIGHTBOX
+   8. CERTIFICATES LIGHTBOX
    ============================================================ */
 const lightbox = document.getElementById('lightbox-modal');
 const lightboxImg = document.getElementById('lightbox-content');
