@@ -555,7 +555,7 @@ section {
 .services-section { width: 100%; }
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 16px;
 }
 .service-card {
@@ -571,9 +571,11 @@ section {
 .service-card:hover {
   transform: translateY(-6px);
 }
-#svc-1:hover { border-color: rgba(0,245,255,0.3); box-shadow: 0 16px 40px rgba(0,245,255,0.1); }
-#svc-2:hover { border-color: rgba(191,0,255,0.3); box-shadow: 0 16px 40px rgba(191,0,255,0.1); }
-#svc-3:hover { border-color: rgba(0,255,136,0.3); box-shadow: 0 16px 40px rgba(0,255,136,0.1); }
+#svc-1:hover { border-color: rgba(0,245,255,0.35); box-shadow: 0 16px 40px rgba(0,245,255,0.12); }
+#svc-2:hover { border-color: rgba(191,0,255,0.35); box-shadow: 0 16px 40px rgba(191,0,255,0.12); }
+#svc-3:hover { border-color: rgba(0,255,136,0.35); box-shadow: 0 16px 40px rgba(0,255,136,0.12); }
+#svc-4:hover { border-color: rgba(255,0,128,0.35); box-shadow: 0 16px 40px rgba(255,0,128,0.12); }
+#svc-5:hover { border-color: rgba(255,215,0,0.35); box-shadow: 0 16px 40px rgba(255,215,0,0.12); }
 
 .svc-icon-wrap {
   width: 52px; height: 52px; border-radius: 14px;
@@ -583,6 +585,8 @@ section {
 .cyan-glow   { background: rgba(0,245,255,0.1);   color: var(--cyan);   border: 1px solid rgba(0,245,255,0.2);   }
 .purple-glow { background: rgba(191,0,255,0.1); color: var(--purple); border: 1px solid rgba(191,0,255,0.2); }
 .green-glow  { background: rgba(0,255,136,0.1);  color: var(--green);  border: 1px solid rgba(0,255,136,0.2);  }
+.pink-glow   { background: rgba(255,0,128,0.1);   color: var(--pink);   border: 1px solid rgba(255,0,128,0.25); }
+.gold-glow   { background: rgba(255,215,0,0.1);   color: var(--gold);   border: 1px solid rgba(255,215,0,0.25); }
 
 .svc-title {
   font-family: var(--font-hud);
@@ -601,6 +605,8 @@ section {
 }
 #svc-2 .svc-line { background: linear-gradient(90deg, var(--purple), transparent); }
 #svc-3 .svc-line { background: linear-gradient(90deg, var(--green), transparent); }
+#svc-4 .svc-line { background: linear-gradient(90deg, var(--pink), transparent); }
+#svc-5 .svc-line { background: linear-gradient(90deg, var(--gold), transparent); }
 
 /* ==========================================
    PROJECTS SECTION

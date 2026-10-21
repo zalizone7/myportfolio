@@ -32,7 +32,7 @@ exports.handler = async (event, context) => {
 
 Ali Mahmood's profile details:
 - Nickname/Alias: AdotCyber, Cyber Boy.
-- Role: Python Developer, Penetration Tester, Ethical Hacker.
+- Role: Python Developer, Web Developer, App Developer, Penetration Tester, Ethical Hacker.
 - Experience: 3+ years coding, 100% Ethical Hacker.
 - Achievements: Built 15+ projects (including VulnAI, Medical website audit), completed 5+ CTF challenges.
 - Contact: Email (zalizone@gmail.com), WhatsApp (+92 309 7413187 / 03097413187).
