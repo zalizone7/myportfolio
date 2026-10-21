@@ -489,6 +489,84 @@ section {
   to   { box-shadow: 0 0 18px rgba(255,215,0,0.2); }
 }
 
+/* ---------- Hero Action Buttons (CV & Hire Me) ---------- */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  z-index: 2;
+  position: relative;
+}
+
+.cyber-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 22px;
+  font-family: var(--font-hud);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.cyber-btn.btn-cv {
+  background: rgba(0, 245, 255, 0.08);
+  border: 1px solid rgba(0, 245, 255, 0.4);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 245, 255, 0.15);
+}
+.cyber-btn.btn-cv:hover {
+  background: rgba(0, 245, 255, 0.18);
+  border-color: var(--cyan);
+  box-shadow: 0 6px 30px rgba(0, 245, 255, 0.45);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+.cyber-btn-icon {
+  width: 15px;
+  height: 15px;
+  color: var(--cyan);
+  stroke-width: 2.2;
+}
+.cyber-btn-badge {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: rgba(0, 245, 255, 0.2);
+  color: var(--cyan);
+  border: 1px solid rgba(0, 245, 255, 0.35);
+  letter-spacing: 0.05em;
+}
+
+.cyber-btn.btn-hire {
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid rgba(0, 255, 136, 0.4);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 255, 136, 0.12);
+}
+.cyber-btn.btn-hire:hover {
+  background: rgba(0, 255, 136, 0.2);
+  border-color: var(--green);
+  box-shadow: 0 6px 30px rgba(0, 255, 136, 0.35);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+.cyber-btn-bullet {
+  color: var(--green);
+  font-size: 0.9rem;
+}
+
 /* ==========================================
    STATS SECTION
    ========================================== */
@@ -941,6 +1019,7 @@ section {
 .email-bg      { background: linear-gradient(135deg,#c0392b,#e74c3c); box-shadow: 0 4px 16px rgba(231,76,60,0.35); }
 .instagram-bg  { background: linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045); box-shadow: 0 4px 16px rgba(131,58,180,0.35); }
 .fiverr-bg     { background: linear-gradient(135deg,#00b22d,#1dbf73);    box-shadow: 0 4px 16px rgba(29,191,115,0.4); }
+.cv-bg         { background: linear-gradient(135deg,#0284c7,#00f5ff);    box-shadow: 0 4px 16px rgba(0,245,255,0.35); }
 
 #social-linkedin:hover { border-color: rgba(0,160,220,0.45); box-shadow: 0 8px 32px rgba(0,119,181,0.25); background: rgba(0,119,181,0.08); }
 #social-github:hover   { border-color: rgba(255,255,255,0.2); box-shadow: 0 8px 32px rgba(255,255,255,0.06); background: rgba(255,255,255,0.04); }
@@ -948,6 +1027,7 @@ section {
 #social-email:hover    { border-color: rgba(231,76,60,0.4);   box-shadow: 0 8px 32px rgba(231,76,60,0.2);   background: rgba(231,76,60,0.07); }
 #social-fiverr:hover   { border-color: rgba(29,191,115,0.45); box-shadow: 0 8px 32px rgba(29,191,115,0.25); background: rgba(29,191,115,0.08); }
 #social-instagram:hover { border-color: rgba(225,48,108,0.45); box-shadow: 0 8px 32px rgba(131,58,180,0.25); background: rgba(225,48,108,0.08); }
+#social-cv:hover        { border-color: rgba(0,245,255,0.5);   box-shadow: 0 8px 32px rgba(0,245,255,0.25);   background: rgba(0,245,255,0.08); }
 
 .social-info { display: flex; flex-direction: column; gap: 2px; flex: 1; }
 .social-label {
