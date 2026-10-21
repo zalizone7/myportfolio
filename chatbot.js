@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Add initial welcome message if empty
   if (messagesBox.children.length === 0) {
-    appendMessage('bot', 'AdotCyber Assistant initialized.\n\nWelcome! I am Ali Mahmood\'s AI chatbot. Ask me about Ali\'s profile, skills, projects, cybersecurity, or programming.');
+    appendMessage('bot', 'AdotCyber AI online. Ask me anything about Ali, his projects, or tech skills!');
   }
 
   // Handle Form Submission
@@ -123,8 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.appendChild(textEl);
     messagesBox.appendChild(wrapper);
 
-    // Scroll to bottom
-    messagesBox.scrollTop = messagesBox.scrollHeight;
+    // Scroll to bottom smoothly
+    messagesBox.scrollTo({ top: messagesBox.scrollHeight, behavior: 'smooth' });
   }
 
   // Helper: Show Typing Animation

@@ -1578,11 +1578,11 @@ section {
 /* Messages Box */
 .chat-messages {
   flex: 1;
-  padding: 20px;
+  padding: 14px 16px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
 /* Scrollbar */
 .chat-messages::-webkit-scrollbar {
@@ -1602,8 +1602,8 @@ section {
 .msg-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  max-width: 85%;
+  gap: 3px;
+  max-width: 90%;
 }
 .msg-wrapper.bot {
   align-self: flex-start;
@@ -1619,10 +1619,10 @@ section {
 }
 .msg-text {
   font-family: var(--font-body);
-  font-size: 0.78rem;
-  line-height: 1.45;
-  padding: 10px 14px;
-  border-radius: 12px;
+  font-size: 0.76rem;
+  line-height: 1.4;
+  padding: 8px 12px;
+  border-radius: 10px;
 }
 .msg-wrapper.bot .msg-text {
   background: rgba(255,255,255,0.03);
