@@ -55,7 +55,7 @@ Ali Mahmood's Quick Bio:
 - Ali Mahmood (AdotCyber, Cyber Boy): Python Developer, Web Developer, App Developer, Penetration Tester & Ethical Hacker (3+ years experience, 15+ projects).
 - Top Projects: VulnAI (AI-powered vulnerability scanner), Pathora (pakistani entry-test portal with 14 tools at pathoras.vercel.app), and Medical Website Security Audit.
 - Core Skills: Python, JavaScript, C++, Pentesting, Nmap, OWASP ZAP, Metasploit, CTFs.
-- Contact & Resume: WhatsApp (+92 309 7413187), Email (zalizone@gmail.com), Fiverr. Official CV (PDF) is downloadable directly via the "DOWNLOAD CV" button on the page.
+- Contact & Hiring: WhatsApp (+92 309 7413187), Email (zalizone@gmail.com), Fiverr. Ali offers a Free 15-Min Consultation call for client projects via WhatsApp. Official CV (PDF) is downloadable on the page.
 - Certs: CEH, CompTIA Security+, EJPT, Medix Prep Point Appreciation.
 
 Tone: Tech-savvy, elite cyber hacker, direct, polite, punchy.` }]

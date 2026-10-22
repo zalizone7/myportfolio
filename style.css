@@ -976,9 +976,117 @@ section {
 }
 
 /* ==========================================
-   SOCIAL SECTION – Wide Cards
+   SOCIAL & HIRE SECTION – Wide Cards
    ========================================== */
 .social-section { width: 100%; }
+
+/* ---------- Free Consultation Banner (Subtle & Executive) ---------- */
+.consultation-banner {
+  background: rgba(13, 17, 28, 0.72);
+  border: 1px solid rgba(0, 245, 255, 0.22);
+  border-radius: 16px;
+  padding: 22px 24px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.consultation-banner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--cyan), var(--green));
+}
+.consultation-banner:hover {
+  border-color: rgba(0, 245, 255, 0.4);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 245, 255, 0.08);
+}
+.consultation-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+  color: var(--cyan);
+  background: rgba(0, 245, 255, 0.08);
+  border: 1px solid rgba(0, 245, 255, 0.25);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+.consult-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 6px var(--green);
+}
+.consultation-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.consultation-text {
+  flex: 1;
+  min-width: 250px;
+}
+.consultation-title {
+  font-family: var(--font-hud);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+}
+.consultation-desc {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--muted-lt);
+  line-height: 1.45;
+  margin: 0;
+}
+.btn-consultation {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 20px;
+  font-family: var(--font-hud);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  background: rgba(0, 245, 255, 0.08);
+  border: 1px solid rgba(0, 245, 255, 0.35);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.btn-consultation:hover {
+  background: rgba(0, 245, 255, 0.18);
+  border-color: var(--cyan);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 245, 255, 0.3);
+}
+.consult-ico {
+  width: 15px;
+  height: 15px;
+  color: var(--cyan);
+}
+.consult-arrow {
+  font-size: 0.95rem;
+  transition: transform 0.25s ease;
+  color: var(--green);
+}
+.btn-consultation:hover .consult-arrow {
+  transform: translateX(3px);
+}
+
 .social-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1525,6 +1633,18 @@ section {
   }
   .nav-tab .tab-slash {
     display: none; /* Hide // slashes on mobile to save horizontal space */
+  }
+  .consultation-banner {
+    padding: 16px 18px;
+  }
+  .consultation-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .btn-consultation {
+    width: 100%;
+    justify-content: center;
   }
 }
 @media (max-width: 400px) {
