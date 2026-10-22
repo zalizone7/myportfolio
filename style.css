@@ -665,15 +665,101 @@ section {
   font-size: 0.78rem; line-height: 1.6;
   color: var(--muted-lt);
 }
-.svc-line {
-  height: 1px; width: 40px;
-  background: linear-gradient(90deg, var(--cyan), transparent);
-  margin-top: auto;
+/* Deliverables List inside Service Cards */
+.svc-deliverables {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 6px 0 10px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
 }
-#svc-2 .svc-line { background: linear-gradient(90deg, var(--purple), transparent); }
-#svc-3 .svc-line { background: linear-gradient(90deg, var(--green), transparent); }
-#svc-4 .svc-line { background: linear-gradient(90deg, var(--pink), transparent); }
-#svc-5 .svc-line { background: linear-gradient(90deg, var(--gold), transparent); }
+.svc-deliv-title {
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+  letter-spacing: 0.12em;
+  color: var(--cyan);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.svc-deliv-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  color: #d1d5db;
+  line-height: 1.4;
+}
+.svc-check {
+  color: var(--green);
+  font-weight: 700;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+/* Service Package Footer */
+.svc-package-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  flex-wrap: wrap;
+}
+.svc-turnaround {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.06em;
+  color: var(--muted-lt);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.svc-turnaround-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 6px var(--green);
+}
+.svc-inquire-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-hud);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  background: rgba(0, 245, 255, 0.08);
+  border: 1px solid rgba(0, 245, 255, 0.3);
+  padding: 6px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.svc-inquire-btn:hover {
+  background: rgba(0, 245, 255, 0.2);
+  border-color: var(--cyan);
+  box-shadow: 0 0 16px rgba(0, 245, 255, 0.3);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+.svc-inquire-arrow {
+  color: var(--cyan);
+  font-size: 0.75rem;
+  transition: transform 0.25s ease;
+}
+.svc-inquire-btn:hover .svc-inquire-arrow {
+  transform: translateX(3px);
+}
 
 /* ==========================================
    PROJECTS SECTION
