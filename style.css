@@ -1648,7 +1648,88 @@ section {
   font-family: var(--font-body);
   font-size: 0.69rem;
   color: var(--muted-lt);
-  line-height: 1.45;
+/* ==========================================
+   PROJECT 4: SUKOONAI MENTAL HEALTH PLATFORM
+   ========================================== */
+#proj-sukoonai::before {
+  background: linear-gradient(90deg, #00f5ff, #00ff88, #ffd700);
+}
+.sukoon-logo-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(0, 245, 255, 0.45);
+  box-shadow: 0 0 18px rgba(0, 245, 255, 0.35), 0 0 25px rgba(0, 255, 136, 0.15);
+  background: #020712;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sukoon-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+#proj-sukoonai:hover .sukoon-logo-img {
+  transform: scale(1.08);
+}
+.sukoon-badge {
+  color: var(--cyan);
+  background: rgba(0, 245, 255, 0.08);
+  border-color: rgba(0, 245, 255, 0.35);
+}
+.sukoon-tier-badge {
+  color: var(--green);
+  background: rgba(0, 255, 136, 0.08);
+  border-color: rgba(0, 255, 136, 0.35);
+}
+.sukoon-stats-bar {
+  background: rgba(0, 255, 136, 0.03);
+  border-color: rgba(0, 255, 136, 0.2);
+}
+.sukoon-stats-bar .p-stat strong {
+  color: var(--green);
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+}
+.sukoon-tools-wrapper {
+  background: rgba(255, 255, 255, 0.015);
+  border-color: rgba(0, 245, 255, 0.1);
+}
+.sukoon-feat-item:hover {
+  background: rgba(0, 255, 136, 0.04);
+  border-color: rgba(0, 255, 136, 0.28);
+}
+.sukoon-crypto-callout {
+  background: rgba(0, 245, 255, 0.03);
+  border: 1px solid rgba(0, 245, 255, 0.18);
+  border-left: 3px solid var(--cyan);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-top: 4px;
+}
+.crypto-callout-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-hud);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--cyan);
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+.crypto-callout-header svg {
+  color: var(--cyan);
+}
+.crypto-callout-text {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  color: var(--muted-lt);
+  line-height: 1.5;
+  margin: 0;
 }
 
 /* ==========================================

@@ -53,7 +53,7 @@ CRITICAL RULE – STRICT NO-SCROLL LENGTH LIMIT:
 
 Ali Mahmood's Quick Bio:
 - Ali Mahmood (AdotCyber, Cyber Boy): Python Developer, Web Developer, App Developer, Penetration Tester & Ethical Hacker (3+ years experience, 15+ projects).
-- Top Projects: VulnAI (AI-powered vulnerability scanner), Pathora (pakistani entry-test portal with 14 tools at pathoras.vercel.app), and Medical Website Security Audit.
+- Top Projects: VulnAI (AI-powered vulnerability scanner), Pathora (14-tool entry test portal at pathoras.vercel.app), SukoonAI (Zero-Knowledge Teen Mental Health & 4-tier Institutional Wellness Platform), and Medical Website Security Audit.
 - Core Skills: Python, JavaScript, C++, Pentesting, Nmap, OWASP ZAP, Metasploit, CTFs.
 - Service Packages & Deliverables: Python Automation & Bots (48h-3d), Penetration Testing & PDF Audits (3-5d), Security Hardening & Bug Fixing (24h-48h), Full-Stack Web Dev (3-7d), and Cross-Platform Apps (1-2w).
 - Contact & Hiring: WhatsApp (+92 309 7413187), Email (zalizone@gmail.com), Fiverr. Ali offers a Free 15-Min Consultation call for client projects via WhatsApp. Official CV (PDF) is downloadable on the page.

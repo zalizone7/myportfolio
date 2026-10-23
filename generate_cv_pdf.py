@@ -10,10 +10,10 @@ def create_cv():
     doc = SimpleDocTemplate(
         pdf_path,
         pagesize=A4,
-        leftMargin=36,
-        rightMargin=36,
-        topMargin=36,
-        bottomMargin=36
+        leftMargin=30,
+        rightMargin=30,
+        topMargin=26,
+        bottomMargin=26
     )
 
     styles = getSampleStyleSheet()
@@ -29,8 +29,8 @@ def create_cv():
         'NameStyle',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=20,
-        leading=22,
+        fontSize=18,
+        leading=20,
         textColor=dark_text
     )
     
@@ -38,8 +38,8 @@ def create_cv():
         'TagStyle',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=10,
-        leading=13,
+        fontSize=9.5,
+        leading=12,
         textColor=primary_color
     )
     
@@ -47,8 +47,8 @@ def create_cv():
         'ContactStyle',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=8.5,
-        leading=12,
+        fontSize=8,
+        leading=11,
         alignment=2, # Right aligned
         textColor=sub_text
     )
@@ -57,11 +57,11 @@ def create_cv():
         'SectionHeadStyle',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=10.5,
-        leading=14,
+        fontSize=9.5,
+        leading=12,
         textColor=dark_text,
-        spaceBefore=8,
-        spaceAfter=4
+        spaceBefore=5,
+        spaceAfter=2
     )
     
     body_style = ParagraphStyle(
@@ -192,10 +192,9 @@ def create_cv():
     ], colWidths=[360, 162])
     p1_head.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'MIDDLE'), ('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0)]))
     story.append(p1_head)
-    story.append(Paragraph("• Built an automated scanner integrating <b>Nmap</b> and <b>OWASP ZAP</b> with Google Gemini AI for deep security analysis.", bullet_style))
-    story.append(Paragraph("• Parsed complex security scan dumps into prioritized severity matrices (Critical, High, Medium, Low) with automated remediation.", bullet_style))
-    story.append(Paragraph("• Generated audit-grade PDF reports equipped with code-level fix recommendations for engineering teams.", bullet_style))
-    story.append(Spacer(1, 4))
+    story.append(Paragraph("• Built an automated scanner combining <b>Nmap</b> & <b>OWASP ZAP</b> with Google Gemini AI for automated CVE discovery.", bullet_style))
+    story.append(Paragraph("• Automated parsing of scan dumps into prioritized severity matrices with executive PDF audit remediation reports.", bullet_style))
+    story.append(Spacer(1, 3))
 
     # Project 2: Medical Audit
     p2_head = Table([
@@ -204,10 +203,9 @@ def create_cv():
     ], colWidths=[360, 162])
     p2_head.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'MIDDLE'), ('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0)]))
     story.append(p2_head)
-    story.append(Paragraph("• Executed an unauthorized-scope black-box penetration test against a live medical platform web app and host server.", bullet_style))
-    story.append(Paragraph("• Discovered critical CVE exposures: legacy Apache 2.2.8 on Port 80 and outdated TLS 1.0 protocols on Port 443.", bullet_style))
-    story.append(Paragraph("• Delivered an executive vulnerability report detailing exact remediation steps: TLS 1.3 enablement and strict HTTPS enforcement.", bullet_style))
-    story.append(Spacer(1, 4))
+    story.append(Paragraph("• Executed a black-box penetration test against a live medical platform web app and host server infrastructure.", bullet_style))
+    story.append(Paragraph("• Discovered critical Apache 2.2.8 and TLS 1.0 exposures, delivering comprehensive hardening guidelines (TLS 1.3 & HTTPS).", bullet_style))
+    story.append(Spacer(1, 3))
 
     # Project 3: Pathora
     p3_head = Table([
@@ -218,7 +216,17 @@ def create_cv():
     story.append(p3_head)
     story.append(Paragraph("• Architected a 100% free educational portal featuring 14 integrated tools serving thousands of Pakistani university candidates.", bullet_style))
     story.append(Paragraph("• Built AI mock test engines (NUST NET, FAST-NU, ECAT), aggregate merit calculator, and 188 universities comparison directory.", bullet_style))
-    story.append(Paragraph("• Delivered sub-second load times, mobile-responsive glassmorphism UI, and high-concurrency availability on Vercel.", bullet_style))
+    story.append(Spacer(1, 4))
+
+    # Project 4: SukoonAI
+    p4_head = Table([
+        [Paragraph("<b>SukoonAI – Teen Mental Health &amp; Institutional Platform</b>", job_title_style),
+         Paragraph("Full-Stack &amp; Security Architect", date_style)]
+    ], colWidths=[360, 162])
+    p4_head.setStyle(TableStyle([('VALIGN', (0,0), (-1,-1), 'MIDDLE'), ('LEFTPADDING', (0,0), (-1,-1), 0), ('RIGHTPADDING', (0,0), (-1,-1), 0), ('TOPPADDING', (0,0), (-1,-1), 0), ('BOTTOMPADDING', (0,0), (-1,-1), 0)]))
+    story.append(p4_head)
+    story.append(Paragraph("• Engineered an empathetic teen AI companion with habit reformation challenges and <b>Zero-Knowledge client-side encrypted database storage</b>.", bullet_style))
+    story.append(Paragraph("• Developed 4-tier institutional analytics for schools, enabling educators and leadership to monitor anonymous classroom mental wellness trends.", bullet_style))
     story.append(Spacer(1, 4))
 
     # 5. Certifications & Accreditations
