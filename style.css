@@ -1648,6 +1648,8 @@ section {
   font-family: var(--font-body);
   font-size: 0.69rem;
   color: var(--muted-lt);
+  line-height: 1.45;
+}
 /* ==========================================
    PROJECT 4: SUKOONAI MENTAL HEALTH PLATFORM
    ========================================== */
